@@ -27,6 +27,7 @@ const AppNavbar: React.FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center gap-3">
             <Nav.Link as={Link} to="/" className="text-white opacity-75 hover-opacity-100">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="text-white opacity-75 hover-opacity-100">About</Nav.Link>
             
             {token ? (
               <>
