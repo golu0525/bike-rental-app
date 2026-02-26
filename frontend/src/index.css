@@ -1,0 +1,125 @@
+:root {
+  --primary: #f59e0b;
+  --primary-dark: #d97706;
+  --dark: #0a0a0b;
+  --dark-accent: #161618;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--dark);
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.premium-navbar {
+  background: rgba(10, 10, 11, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.premium-glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+}
+
+.premium-card {
+  background: var(--dark-accent) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.1);
+}
+
+.btn-premium {
+  background: linear-gradient(135deg, var(--primary) 0%, #fbbf24 100%) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 12px 28px !important;
+  border-radius: 12px !important;
+  color: #000 !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4) !important;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.1), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.05), transparent 40%);
+}
+
+.form-control-premium {
+  background: var(--dark-accent) !important;
+  border: 1px solid var(--glass-border) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+}
+
+/* utility for when an input has a dark background */
+.form-control-dark {
+  background-color: var(--dark-accent) !important;
+  color: #fff !important;
+}
+
+/* apply light text automatically to form controls inside elements with dark backgrounds */
+.bg-dark-accent .form-control,
+.bg-dark .form-control,
+.bg-secondary .form-control {
+  background-color: var(--dark-accent) !important;
+  color: #fff !important;
+}
+.form-control-premium:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1) !important;
+}
+
+.fw-black {
+  font-weight: 900 !important;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.min-vh-75 {
+  min-height: 75vh !important;
+}
+
+.border-white-10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.max-width-xl {
+  max-width: 800px;
+}
+
+.min-width-200 {
+  min-width: 200px;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
