@@ -225,3 +225,6 @@ body {
 p.lead.mb-4.txt-dark {
     color: #000 !important;
 }
+.hero-gradient h1.txt-dark, .hero-gradient h2.txt-dark, .hero-gradient h3.txt-dark, .hero-gradient h4.txt-dark, .hero-gradient h5.txt-dark, .hero-gradient h6.txt-dark, .hero-gradient p.txt-dark {
+ color: #000 !important;
+}
