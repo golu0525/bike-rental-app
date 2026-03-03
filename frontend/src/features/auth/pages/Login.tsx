@@ -117,6 +117,11 @@ const Login: React.FC = () => {
             Create one
           </Link>
         </p>
+        <p className="text-center mt-2 small">
+          <Link to="/phone-login" className="text-primary">
+            Or login with your phone number
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -8,4 +8,10 @@ export const authApi = {
   
   login: (data: { email: string; password: string }) =>
     axios.post(`${API_URL}/auth/login`, data),
+
+  requestOtp: (phone: string) =>
+    axios.post(`${API_URL}/auth/otp/request-otp`, { phone }),
+
+  verifyOtp: (phone: string, code: string) =>
+    axios.post(`${API_URL}/auth/otp/verify-otp`, { phone, code }),
 };

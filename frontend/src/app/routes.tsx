@@ -6,6 +6,7 @@ import LandingPage from '../features/bikes/pages/LandingPage';
 import AboutUs from '../features/bikes/pages/AboutUs';
 import TestimonialsPage from '../features/bikes/pages/TestimonialsPage';
 import Login from '../features/auth/pages/Login';
+import PhoneLogin from '../features/auth/pages/PhoneLogin';
 import Signup from '../features/auth/pages/Signup';
 import UserDashboard from '../features/dashboard/pages/UserDashboard';
 import AdminDashboard from '../features/dashboard/pages/AdminDashboard';
@@ -15,6 +16,7 @@ export const routes = [
   { path: '/about', element: <AboutUs /> },
   { path: '/testimonials', element: <TestimonialsPage /> },
   { path: '/login', element: <Login /> },
+  { path: '/phone-login', element: <PhoneLogin /> },
   { path: '/signup', element: <Signup /> },
   { path: '/dashboard', element: <UserDashboard /> },
   { path: '/admin', element: <AdminDashboard /> },

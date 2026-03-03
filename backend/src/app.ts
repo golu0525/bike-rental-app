@@ -7,6 +7,7 @@ import { errorHandler } from './middlewares/error.middleware.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import bikeRoutes from './modules/bikes/bike.routes.js';
 import bookingRoutes from './modules/bookings/booking.routes.js';
+import otpRoutes from './modules/otp/otp.routes.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/bikes', bikeRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/auth/otp', otpRoutes);
 
 // Health check
 app.get('/', (req, res) => {

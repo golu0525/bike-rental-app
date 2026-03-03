@@ -23,7 +23,8 @@ export const initializeDatabase = async () => {
       CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
-        email VARCHAR(100) UNIQUE NOT NULL,
+        email VARCHAR(100) UNIQUE,
+        phone VARCHAR(20) UNIQUE,
         password VARCHAR(255) NOT NULL,
         role ENUM('ADMIN', 'USER') DEFAULT 'USER',
         location VARCHAR(100),
@@ -31,6 +32,11 @@ export const initializeDatabase = async () => {
       )
     `);
     console.log('✅ Users table created or already exists');
+
+    // ensure phone column exists if upgrading older schema
+    await connection.query(
+      "ALTER TABLE users ADD COLUMN IF NOT EXISTS phone VARCHAR(20) UNIQUE"
+    );
 
     // Create bikes table
     await connection.query(`
@@ -63,6 +69,20 @@ export const initializeDatabase = async () => {
       )
     `);
     console.log('✅ Subscriptions table created or already exists');
+
+    // Create OTP codes table used for phone-based authentication
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS otp_codes (
+        phone VARCHAR(20) PRIMARY KEY,
+        code_hash VARCHAR(255) NOT NULL,
+        expires_at DATETIME NOT NULL,
+        attempts INT DEFAULT 0,
+        last_sent_at DATETIME NOT NULL,
+        failed_attempts INT DEFAULT 0,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    console.log('✅ OTP codes table created or already exists');
 
     console.log('✅ Database initialization completed successfully');
   } catch (error) {

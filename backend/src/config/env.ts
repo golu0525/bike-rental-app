@@ -17,6 +17,14 @@ export const env = {
   JWT_SECRET: process.env.JWT_SECRET || 'supersecretkey',
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '24h',
 
+  // OTP settings
+  OTP_EXPIRY_MINUTES: Number(process.env.OTP_EXPIRY_MINUTES) || 5,
+  OTP_MAX_ATTEMPTS: Number(process.env.OTP_MAX_ATTEMPTS) || 5,
+  OTP_REQUEST_INTERVAL: Number(process.env.OTP_REQUEST_INTERVAL) || 60, // seconds
+
+  // SMS provider
+  SMS_API_KEY: process.env.SMS_API_KEY || '',
+
   // CORS
   CORS_ORIGIN: process.env.CORS_ORIGIN || '*',
 };
